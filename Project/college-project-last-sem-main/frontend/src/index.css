@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    @apply bg-slate-50 text-slate-800 antialiased;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-premium;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-bold py-2.5 px-6 rounded-2xl transition-all duration-300 shadow-lg shadow-primary-500/20 hover:shadow-primary-600/40 active:scale-95 disabled:opacity-50;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-slate-50 text-slate-700 font-bold py-2.5 px-6 rounded-2xl border border-slate-200 transition-all duration-300 shadow-premium hover:border-primary-200 active:scale-95;
+  }
+  
+  .card-premium {
+    @apply bg-white rounded-[2rem] border border-slate-100 shadow-premium hover:shadow-2xl hover:shadow-primary-500/5 transition-all duration-500 overflow-hidden;
+  }
+  
+  .input-modern {
+    @apply w-full px-5 py-3 rounded-2xl border border-slate-200 bg-white/50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 transition-all text-sm;
+  }
+  
+  .badge-premium {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider;
+  }
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { 
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors; 
+}
+
+/* Animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.page-transition {
+  animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Chatbot Styles */
+.chat-user { @apply bg-primary-600 text-white rounded-3xl rounded-br-none px-5 py-3 shadow-lg shadow-primary-500/20 text-sm; }
+.chat-bot  { @apply bg-white border border-slate-100 text-slate-700 rounded-3xl rounded-bl-none px-5 py-3 shadow-premium text-sm; }

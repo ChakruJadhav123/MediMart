@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# Maven Wrapper script (basic)
+# Note: On Windows you should use mvnw.cmd.
+
+BASEDIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+exec "$BASEDIR/./mvnw.cmd" "$@"
+
